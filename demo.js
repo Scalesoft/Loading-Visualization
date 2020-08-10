@@ -32,17 +32,21 @@ $(document).ready(function() {
     loader.startObserving();
 
     for (let i = 0; i < infinite.length; i++){
-        $("#" + infinite[i] + "_button").unbind().click(function(event) {
+        let element = infinite[i];
+        
+        $("#" + element + "_button").unbind().click(function(event) {
             event.preventDefault();
             resetInfinite();
-            $("#" + infinite[i]).attr("hidden", false);
+            $("#" + element).attr("hidden", false);
         });
     }
     for (let i = 0; i < finite.length; i++) {
-        $("#" + finite[i] + "_button").unbind().click(function(event) {
+        let element = finite[i];
+        
+        $("#" + element + "_button").unbind().click(function(event) {
             event.preventDefault();
             resetFinite();
-            $("#" + finite[i]).attr("hidden", false);
+            $("#" + element).attr("hidden", false);
         });
     }
     $("#finite").unbind().click(function(event) {
